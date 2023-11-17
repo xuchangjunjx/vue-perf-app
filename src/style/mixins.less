@@ -1,0 +1,42 @@
+
+//transition
+.motion-common() {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.make-motion(@className, @keyframeName) {
+  .@{className}-enter-active,
+  .@{className}-appear {
+    .motion-common();
+    animation-play-state: paused;
+  }
+  .@{className}-leave-active {
+    .motion-common();
+    animation-play-state: paused;
+  }
+  .@{className}-enter-active,
+  .@{className}-appear {
+    animation-name: ~"@{keyframeName}In";
+    animation-play-state: running;
+  }
+  .@{className}-leave-active {
+    animation-name: ~"@{keyframeName}Out";
+    animation-play-state: running;
+  }
+}
+
+.fade-motion(@className, @keyframeName) {
+  .make-motion(@className, @keyframeName);
+  .@{className}-enter-active,
+  .@{className}-appear {
+    opacity: 0;
+    animation-timing-function: linear;
+  }
+  .@{className}-leave-active {
+    animation-timing-function: linear;
+  }
+}
+.transition(@prop) {
+  transition: @prop 0.3s ease-in-out;
+}
