@@ -23,6 +23,21 @@ const routes = [
         component: () => import("../views/about.vue"),
       },
       {
+        path: "/charts",
+        name: "charts",
+        component: () => import("../views/charts/dashboard.vue"),
+      },
+      {
+        path: "/markdown",
+        name: "markdown",
+        component: () => import("../views/marked/index.vue"),
+      },
+      {
+        path: "/svg-icons",
+        name: "svg-icons",
+        component: () => import("../views/svg-icons.vue"),
+      },
+      {
         path: "/child",
         component: () => import("../views/home/child-router.vue"),
         // 谁是谁的小弟，谁又是谁的大哥

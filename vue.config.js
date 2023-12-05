@@ -1,4 +1,8 @@
 const { defineConfig } = require("@vue/cli-service");
+const path = require("path");
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 function proxy(alias, url) {
   let key = `^/${alias}`;
   return {
@@ -11,7 +15,7 @@ function proxy(alias, url) {
     },
   };
 }
-module.exports = defineConfig({
+module.exports = {
   transpileDependencies: true,
   lintOnSave: false,
   css: {
@@ -31,4 +35,67 @@ module.exports = defineConfig({
       ...proxy("api", `http://127.0.0.1:3000/api`),
     },
   },
-});
+  configureWebpack: () => {
+    return {
+      optimization: {
+        // minimizer: [new EsbuildPlugin({ minify: true, css: true })],
+        splitChunks: {
+          // chunks: 'all',
+          // minSize: 20000,
+          // // minRemainingSize: 0,
+          // // maxSize: 0,
+          minChunks: 1,
+          maxAsyncRequests: 30,
+          maxInitialRequests: 30,
+          cacheGroups: {
+            modules: {
+              name: "chunk-modules",
+              test: /[\\/]node_modules[\\/]/,
+              chunks: "all",
+              priority: -10,
+              reuseExistingChunk: true,
+              enforce: true
+            },
+            components: {
+              name: "chunk-cpms",
+              test: /[\\/]src\/components[\\/]/,
+              chunks: "all",
+              priority: 6,
+              reuseExistingChunk: true,
+              enforce: true
+            }
+            // runtimeChunk: {
+            //   name: "manifest"
+            // }
+          }
+        }
+      }
+    }
+  },
+  chainWebpack: (config) => {
+    if (process.env.npm_config_report) {
+      config
+        .plugin("webpack-bundle-analyzer")
+        .use(require("webpack-bundle-analyzer").BundleAnalyzerPlugin, [
+          {
+            analyzerMode: "static"
+          }
+        ]);
+    }
+    config.module
+      .rule("svg")
+      .exclude.add(resolve("src/components/icons/assets"))
+      .end();
+    config.module
+      .rule("icons")
+      .test(/\.svg$/)
+      .include.add(resolve("src/components/icons/assets"))
+      .end()
+      .use("svg-sprite-loader")
+      .loader("svg-sprite-loader")
+      .options({
+        symbolId: "[name]"
+      })
+      .end();
+  }
+};

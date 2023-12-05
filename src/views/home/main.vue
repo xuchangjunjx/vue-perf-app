@@ -9,6 +9,15 @@
           <router-link to="/about" class="menu-item cursor-pointer"
             >关于</router-link
           >
+          <router-link to="/charts" class="menu-item cursor-pointer"
+            >图表</router-link
+          >
+          <router-link to="/svg-icons" class="menu-item cursor-pointer"
+            >svg icon</router-link
+          >
+          <router-link to="/markdown" class="menu-item cursor-pointer"
+            >markdown</router-link
+          >
           <router-link to="/child" class="menu-item cursor-pointer"
             >child</router-link
           >
