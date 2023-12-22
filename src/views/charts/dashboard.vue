@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import * as echarts from "echarts";
+import * as echarts from "@/components/echarts";
 import { sortBy } from 'lodash';
 export default {
   mounted() {
@@ -25,11 +25,7 @@ export default {
       legend: {
         data: ["Email", "Union Ads", "Video Ads", "Direct", "Search Engine"],
       },
-      toolbox: {
-        feature: {
-          saveAsImage: {},
-        },
-      },
+      
       grid: {
         left: "3%",
         right: "4%",

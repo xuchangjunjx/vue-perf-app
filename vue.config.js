@@ -1,4 +1,3 @@
-const { defineConfig } = require("@vue/cli-service");
 const path = require("path");
 function resolve(dir) {
   return path.join(__dirname, dir);
@@ -21,6 +20,7 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
+        // 全局less变量
         additionalData: `@import "~@/style/variables.less";`,
       },
     },
@@ -38,18 +38,14 @@ module.exports = {
   configureWebpack: () => {
     return {
       optimization: {
-        // minimizer: [new EsbuildPlugin({ minify: true, css: true })],
-        splitChunks: {
-          // chunks: 'all',
-          // minSize: 20000,
-          // // minRemainingSize: 0,
-          // // maxSize: 0,
+         splitChunks: {
           minChunks: 1,
           maxAsyncRequests: 30,
           maxInitialRequests: 30,
           cacheGroups: {
             modules: {
               name: "chunk-modules",
+              // 将node_modules中的第三方模块打包成一个单独的文件
               test: /[\\/]node_modules[\\/]/,
               chunks: "all",
               priority: -10,
@@ -58,6 +54,7 @@ module.exports = {
             },
             components: {
               name: "chunk-cpms",
+              // 将src/components中的公共组件打包成一个单独的文件
               test: /[\\/]src\/components[\\/]/,
               chunks: "all",
               priority: 6,

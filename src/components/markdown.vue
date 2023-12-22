@@ -4,7 +4,7 @@
 <script>
 import { Marked } from "marked";
 import { markedHighlight } from "marked-highlight";
-import hljs from "highlight.js";
+import hljs from "@/components/highlight";
 import "highlight.js/styles/base16/darcula.css";
 export default {
   props: {

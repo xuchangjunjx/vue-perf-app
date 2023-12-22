@@ -228,6 +228,13 @@
   dependencies:
     "@babel/types" "^7.22.5"
 
+"@babel/helper-module-imports@^7.0.0-beta.49":
+  version "7.22.15"
+  resolved "https://npm.bangdao-tech.com/@babel/helper-module-imports/-/helper-module-imports-7.22.15.tgz#16146307acdc40cc00c3b2c647713076464bdbf0"
+  integrity sha512-0pYVBnDKZO2fnSPCrgM/6WMc7eS20Fbok+0r88fp+YtWVLZrp4CkafFGIp+W0VKw4a22sgebPT99y+FDNMdP4w==
+  dependencies:
+    "@babel/types" "^7.22.15"
+
 "@babel/helper-module-transforms@^7.22.5", "@babel/helper-module-transforms@^7.22.9":
   version "7.22.9"
   resolved "https://npm.bangdao-tech.com/@babel/helper-module-transforms/-/helper-module-transforms-7.22.9.tgz#92dfcb1fbbb2bc62529024f72d942a8c97142129"
@@ -1140,6 +1147,15 @@
   dependencies:
     "@babel/helper-string-parser" "^7.22.5"
     "@babel/helper-validator-identifier" "^7.22.5"
+    to-fast-properties "^2.0.0"
+
+"@babel/types@^7.0.0-beta.49":
+  version "7.23.6"
+  resolved "https://npm.bangdao-tech.com/@babel/types/-/types-7.23.6.tgz#be33fdb151e1f5a56877d704492c240fc71c7ccd"
+  integrity sha512-+uarb83brBzPKN38NX1MkB6vb6+mwvR6amUulqAE7ccQw1pEl+bCia9TbdG1lsnFP7lZySvUn37CHyXQdfTwzg==
+  dependencies:
+    "@babel/helper-string-parser" "^7.23.4"
+    "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
 "@babel/types@^7.22.15", "@babel/types@^7.23.0":
@@ -2674,6 +2690,17 @@ babel-plugin-jest-hoist@^27.5.1:
     "@babel/types" "^7.3.3"
     "@types/babel__core" "^7.0.0"
     "@types/babel__traverse" "^7.0.6"
+
+babel-plugin-lodash@^3.3.4:
+  version "3.3.4"
+  resolved "https://npm.bangdao-tech.com/babel-plugin-lodash/-/babel-plugin-lodash-3.3.4.tgz#4f6844358a1340baed182adbeffa8df9967bc196"
+  integrity sha512-yDZLjK7TCkWl1gpBeBGmuaDIFhZKmkoL+Cu2MUUjv5VxUZx/z7tBGBCBcQs5RI1Bkz5LLmNdjx7paOyQtMovyg==
+  dependencies:
+    "@babel/helper-module-imports" "^7.0.0-beta.49"
+    "@babel/types" "^7.0.0-beta.49"
+    glob "^7.1.1"
+    lodash "^4.17.10"
+    require-package-name "^2.0.1"
 
 babel-plugin-polyfill-corejs2@^0.4.4:
   version "0.4.5"
@@ -6399,7 +6426,7 @@ lodash.uniq@^4.5.0:
   resolved "https://npm.bangdao-tech.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
 
-lodash@^4.17.14, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.2.0, lodash@^4.7.0:
+lodash@^4.17.10, lodash@^4.17.14, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.2.0, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://npm.bangdao-tech.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -7887,6 +7914,11 @@ require-from-string@^2.0.2:
   version "2.0.2"
   resolved "https://npm.bangdao-tech.com/require-from-string/-/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
   integrity sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
+
+require-package-name@^2.0.1:
+  version "2.0.1"
+  resolved "https://npm.bangdao-tech.com/require-package-name/-/require-package-name-2.0.1.tgz#c11e97276b65b8e2923f75dabf5fb2ef0c3841b9"
+  integrity sha512-uuoJ1hU/k6M0779t3VMVIYpb2VMJk05cehCaABFhXaibcbvfgR8wKiozLjVFSzJPmQMRqIcO0HMyTFqfV09V6Q==
 
 requires-port@^1.0.0:
   version "1.0.0"
