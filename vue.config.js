@@ -94,5 +94,6 @@ module.exports = {
         symbolId: "[name]"
       })
       .end();
+      config.output.filename("[name].[hash].js").end();
   }
 };

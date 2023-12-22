@@ -25,6 +25,12 @@ const routes = [
       {
         path: "/charts",
         name: "charts",
+        alias: ["/app/charts3"],
+        component: () => import("../views/charts/dashboard.vue"),
+      },
+      {
+        path: "/charts2",
+        name: "charts2",
         component: () => import("../views/charts/dashboard.vue"),
       },
       {
